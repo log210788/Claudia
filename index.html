@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chef Claudia's Kitchen English | Mallorca to the World</title>
+  <!-- Google Fonts for gorgeous culinary typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            banana: {
+              50: '#fffbeb',
+              100: '#fef3c7',
+              200: '#fde68a',
+              300: '#fcd34d',
+              400: '#fbbf24',
+              500: '#f59e0b',
+              600: '#d97706',
+            },
+            terracotta: {
+              50: '#fdf4f1',
+              100: '#fae6e0',
+              400: '#e07a5f',
+              500: '#c85a3c',
+              600: '#a84126',
+            },
+            medsea: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              500: '#0284c7',
+              700: '#0369a1',
+              900: '#0c4a6e',
+            },
+            olive: {
+              50: '#f7fee7',
+              100: '#ecfccb',
+              600: '#65a30d',
+              800: '#3f6212',
+            }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', '"Outfit"', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom smooth scrolling and card flips */
+    html { scroll-behavior: smooth; }
+    .perspective { perspective: 1000px; }
+    .transform-style-3d { transform-style: preserve-3d; }
+    .backface-hidden { backface-visibility: hidden; }
+    .rotate-y-180 { transform: rotateY(180deg); }
+    
+    /* Elegant glass effect */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    
+    /* Custom pulse for speaking */
+    @keyframes speakPulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4); }
+      50% { transform: scale(1.08); box-shadow: 0 0 0 8px rgba(245, 158, 11, 0); }
+    }
+    .speaking-now {
+      animation: speakPulse 1.2s infinite ease-in-out;
+      border-color: #f59e0b !important;
+    }
+
+    /* Print styles for pocket guide */
+    @media print {
+      .no-print { display: none !important; }
+      body { background: white; color: black; }
+      .print-card { break-inside: avoid; border: 1px solid #ccc; box-shadow: none !important; }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-amber-50 via-orange-50/40 to-sky-50 text-slate-800 font-sans min-h-screen antialiased selection:bg-banana-200 selection:text-slate-900">
+
+  <!-- Top Sticky Navigation Bar -->
+  <header class="sticky top-0 z-50 glass-card border-b border-amber-100 shadow-sm transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <div class="flex items-center space-x-3">
+        <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-banana-400 via-amber-500 to-terracotta-400 flex items-center justify-center shadow-md shadow-amber-500/20 text-white font-serif text-2xl font-bold">
+          C
+        </div>
+        <div>
+          <div class="flex items-center space-x-2">
+            <h1 class="font-serif text-xl sm:text-2xl font-bold tracking-tight text-slate-900">Chef Claudia</h1>
+            <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold bg-banana-100 text-amber-800 border border-banana-200">
+              Mallorca ☀️
+            </span>
+          </div>
+          <p class="text-xs text-slate-500 font-medium">English for the Professional Kitchen • Inglés Culinario</p>
+        </div>
+      </div>
+
+      <!-- Nav links -->
+      <nav class="hidden md:flex items-center space-x-1 lg:space-x-2 text-sm font-semibold text-slate-600">
+        <a href="#welcome" class="px-3 py-2 rounded-xl hover:text-amber-600 hover:bg-amber-50/80 transition-all">Welcome</a>
+        <a href="#techniques" class="px-3 py-2 rounded-xl hover:text-amber-600 hover:bg-amber-50/80 transition-all">Cooking Verbs</a>
+        <a href="#ingredients" class="px-3 py-2 rounded-xl hover:text-amber-600 hover:bg-amber-50/80 transition-all">Ingredients</a>
+        <a href="#phrases" class="px-3 py-2 rounded-xl hover:text-amber-600 hover:bg-amber-50/80 transition-all">Kitchen Talk</a>
+        <a href="#quiz" class="px-3 py-2 rounded-xl hover:text-amber-600 hover:bg-amber-50/80 transition-all">Practice Quiz</a>
+        <a href="guess_the_dish.html" class="px-3 py-2 rounded-xl text-amber-900 font-bold bg-banana-200 hover:bg-banana-300 transition-all flex items-center space-x-1 shadow-sm">
+          <span>🎮</span>
+          <span>Guess The Dish!</span>
+        </a>
+      </nav>
+
+      <!-- Audio Speed & Quick Controls -->
+      <div class="flex items-center space-x-3">
+        <div class="hidden sm:flex items-center space-x-1.5 bg-white/90 border border-slate-200 rounded-full px-3 py-1.5 shadow-sm text-xs text-slate-600 font-medium">
+          <span class="text-amber-500 font-bold">🔊 Speed:</span>
+          <button onclick="setAudioSpeed(0.8)" id="speed-slow" class="px-2 py-0.5 rounded-md hover:bg-amber-100 transition-colors">0.8x</button>
+          <button onclick="setAudioSpeed(1.0)" id="speed-normal" class="px-2 py-0.5 rounded-md bg-amber-500 text-white font-bold transition-colors">1.0x</button>
+        </div>
+        <button onclick="window.print()" class="no-print p-2 rounded-xl border border-slate-200 bg-white/80 hover:bg-white text-slate-600 hover:text-amber-600 transition-all shadow-sm" title="Print Pocket Cheat Sheet">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Hero Section with Majorca Culinary Vibe -->
+  <section id="welcome" class="relative overflow-hidden pt-8 pb-16 lg:pt-12 lg:pb-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        
+        <!-- Text introduction -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-orange-100/80 border border-orange-200 text-terracotta-500 text-xs sm:text-sm font-semibold">
+            <span class="text-base">👩‍🍳</span>
+            <span>¡Bienvenida, Chef Claudia! Custom Lesson for Mallorca</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-slate-900 tracking-tight leading-[1.15]">
+            Master English for the <br class="hidden sm:inline">
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-amber-600 via-orange-500 to-terracotta-500">
+              International Kitchen
+            </span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+            From fresh <em class="font-serif text-slate-800">Mallorcan red prawns</em> and <em class="font-serif text-slate-800">extra virgin olive oil</em> to high-heat verbs like <strong>boiling</strong>, <strong>sautéing</strong>, and <strong>simmering</strong>. This interactive visual lesson will give you the confidence to run your brigade, coordinate with front-of-house, and welcome guests from around the world.
+          </p>
+
+          <!-- Audio Pronunciation Feature Notice -->
+          <div class="bg-amber-50/90 border border-amber-200/90 rounded-2xl p-4 flex items-start space-x-3 shadow-sm">
+            <div class="p-2 bg-amber-400 text-white rounded-xl text-xl shadow-sm">
+              🗣️
+            </div>
+            <div class="text-xs sm:text-sm">
+              <strong class="text-amber-900 block font-semibold mb-0.5">Interactive Audio Enabled!</strong>
+              <span class="text-amber-800">Click any <strong class="underline decoration-amber-400">speaker button (🔊)</strong> throughout this page to hear authentic native English pronunciation directly. You can practice repeating out loud!</span>
+            </div>
+          </div>
+
+          <!-- Quick Action Buttons -->
+          <div class="flex flex-wrap gap-3 pt-2">
+            <a href="guess_the_dish.html" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-bold text-sm shadow-md shadow-emerald-600/25 hover:from-emerald-700 hover:to-teal-700 transition-all flex items-center space-x-2">
+              <span>🎮 Play: Guess The Dish Game!</span>
+              <span class="px-2 py-0.5 rounded-md bg-white/20 text-xs uppercase font-extrabold">New!</span>
+            </a>
+            <a href="#techniques" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold text-sm shadow-md shadow-orange-500/25 hover:from-amber-600 hover:to-orange-600 transition-all flex items-center space-x-2">
+              <span>🔥 Start with Cooking Verbs</span>
+            </a>
+            <a href="#ingredients" class="px-6 py-3.5 rounded-xl bg-white border border-slate-200 text-slate-700 font-semibold text-sm hover:bg-slate-50 transition-all flex items-center space-x-2 shadow-sm">
+              <span>🧄 Explore Ingredients</span>
+            </a>
+            <button onclick="playGreeting()" class="px-5 py-3.5 rounded-xl bg-banana-100 border border-banana-300 text-amber-900 font-semibold text-sm hover:bg-banana-200 transition-all flex items-center space-x-2 shadow-sm">
+              <span>🔊 Welcome Audio</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Hero Image Generated with Nano Banana / Imagen 3 -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/80 bg-white">
+            <img src="images/claudia_chef_majorca.jpg" 
+                 alt="Chef Claudia preparing Mediterranean cuisine in Mallorca" 
+                 class="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700 ease-out"
+                 loading="eager">
+            <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-5 text-white">
+              <span class="text-xs uppercase tracking-wider font-bold text-banana-300">Port de Sóller, Mallorca</span>
+              <p class="font-serif text-lg font-semibold">Chef Claudia in her Mediterranean kitchen</p>
+              <p class="text-xs text-white/80 mt-0.5">Ready to welcome international culinary lovers</p>
+            </div>
+          </div>
+          <!-- Decorative floating badge -->
+          <div class="absolute -top-4 -left-4 bg-white/95 backdrop-blur-md rounded-2xl px-4 py-2.5 shadow-lg border border-amber-100 flex items-center space-x-2 text-xs font-bold text-slate-700">
+            <span class="text-xl">☀️</span>
+            <div>
+              <p class="text-[10px] text-amber-600 uppercase tracking-wider font-extrabold">Island Specials</p>
+              <p>Mallorcan Gastronomy</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 1: Cooking Verbs & Techniques (Boiling, Sautéing, etc.) -->
+  <section id="techniques" class="py-16 bg-white/70 border-y border-amber-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800 border border-amber-200 uppercase tracking-widest">
+          Essential Culinary Actions • Verbos Culinarios
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-slate-900 mt-3">
+          Kitchen Verbs & Cooking Techniques
+        </h2>
+        <p class="text-slate-600 mt-3 text-base">
+          In an English-speaking kitchen, precision is everything. Click any card to hear pronunciation and learn when to use each method.
+        </p>
+      </div>
+
+      <!-- Feature Visual: Cooking Techniques Banner from Nano Banana -->
+      <div class="mb-12 rounded-3xl overflow-hidden shadow-xl border-4 border-white bg-white">
+        <img src="images/cooking_techniques.jpg" 
+             alt="Cooking techniques infographic: boiling, sautéing, roasting, grilling, simmering" 
+             class="w-full max-h-[460px] object-cover">
+        <div class="p-4 bg-amber-50/70 border-t border-amber-100 flex flex-wrap items-center justify-between text-xs text-slate-600 gap-2">
+          <div class="flex items-center space-x-2">
+            <span class="text-lg">💡</span>
+            <span class="font-medium">Visual cheat-sheet for high heat vs. gentle heat cooking methods.</span>
+          </div>
+          <span class="text-amber-700 font-semibold">Boil • Simmer • Sauté • Roast • Grill • Poach</span>
+        </div>
+      </div>
+
+      <!-- Interactive Verb Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="verbs-container">
+        
+        <!-- Card 1: Boiling -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-sm hover:shadow-md transition-all group hover:border-amber-300">
+          <div class="flex items-start justify-between">
+            <div class="w-12 h-12 rounded-xl bg-blue-100 text-medsea-700 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+              🍲
+            </div>
+            <button onclick="speakText('To boil. Boiling water. Bring the salted water to a rolling boil before adding the pasta.')" class="p-2 rounded-xl bg-amber-50 text-amber-700 hover:bg-amber-100 border border-amber-200 transition-colors" title="Listen to pronunciation">
+              🔊
+            </button>
+          </div>
+          <div class="mt-4">
+            <div class="flex items-baseline space-x-2">
+              <h3 class="text-2xl font-serif font-bold text-slate-900">To Boil</h3>
+              <span class="text-xs text-slate-400 font-mono">/bɔɪl/</span>
+            </div>
+            <p class="text-xs font-semibold text-amber-600 mt-0.5">Español: Hervir (a borbotones)</p>
+            <p class="text-sm text-slate-600 mt-2.5">
+              Cooking food immersed in water or liquid at <strong>100°C (212°F)</strong> with rapid, energetic bubbles.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 text-xs space-y-1.5">
+            <p class="text-slate-500 font-medium"><strong class="text-slate-700">Kitchen command:</strong> "Bring the water to a rolling boil!"</p>
+            <p class="text-slate-500 font-medium"><strong class="text-slate-700">Claudia's dish:</strong> Boiling potatoes for a traditional Mallorcan salad or pasta.</p>
+          </div>
+        </div>
+
+        <!-- Card 2: Simmering -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-sm hover:shadow-md transition-all group hover:border-amber-300">
+          <div class="flex items-start justify-between">
+            <div class="w-12 h-12 rounded-xl bg-orange-100 text-orange-700 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+              🥘
+            </div>
+            <button onclick="speakText('To simmer. Simmering. Turn the burner down to low and let the tomato sauce simmer gently for twenty minutes.')" class="p-2 rounded-xl bg-amber-50 text-amber-700 hover:bg-amber-100 border border-amber-200 transition-colors" title="Listen to pronunciation">
+              🔊
+            </button>
+          </div>
+          <div class="mt-4">
+            <div class="flex items-baseline space-x-2">
+              <h3 class="text-2xl font-serif font-bold text-slate-900">To Simmer</h3>
+              <span class="text-xs text-slate-400 font-mono">/ˈsɪm.ər/</span>
+            </div>
+            <p class="text-xs font-semibold text-amber-600 mt-0.5">Español: Cocinar a fuego lento / Chup-chup</p>
+            <p class="text-sm text-slate-600 mt-2.5">
+              Cooking in liquid just below boiling temperature (approx. <strong>85°C – 95°C</strong>) with small, lazy bubbles.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 text-xs space-y-1.5">
+            <p class="text-slate-500 font-medium"><strong class="text-slate-700">Kitchen command:</strong> "Lower the heat and let the stock simmer!"</p>
+            <p class="text-slate-500 font-medium"><strong class="text-slate-700">Claudia's dish:</strong> Simmering a rich fish fumet or sobrassada stew.</p>
+          </div>
+        </div>
+
+        <!-- Card 3: Sautéing -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-sm hover:shadow-md transition-all group hover:border-amber-300">
+          <div class="flex items-start justify-between">
+            <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+              🍳
+            </div>
+            <button onclick="speakText('To sauté. Sautéing. Sauté the minced garlic and shallots in extra virgin olive oil over medium-high heat.')" class="p-2 rounded-xl bg-amber-50 text-amber-700 hover:bg-amber-100 border border-amber-200 transition-colors" title="Listen to pronunciation">
+              🔊
+            </button>
+          </div>
+          <div class="mt-4">
+            <div class="flex items-baseline space-x-2">
+              <h3 class="text-2xl font-serif font-bold text-slate-900">To Sauté</h3>
+              <span class="text-xs text-slate-400 font-mono">/soʊˈteɪ/</span>
+            </div>
+            <p class="text-xs font-semibold text-amber-600 mt-0.5">Español: Saltear (a fuego vivo)</p>
+            <p class="text-sm text-slate-600 mt-2.5">
+              Cooking bite-sized ingredients rapidly in a small amount of hot oil or butter, tossing frequently.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 text-xs space-y-1.5">
+            <p class="text-slate-500 font-medium"><strong class="text-slate-700">Kitchen command:</strong> "Sauté the mushrooms until golden brown!"</p>
+            <p class="text-slate-500 font-medium"><strong class="text-slate-700">Claudia's dish:</strong> Salteado de setas (wild mushrooms) or squid rings.</p>
+          </div>
+        </div>
+
+        <!-- Card 4: Roasting -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-sm hover:shadow-md transition-all group hover:border-amber-300">
+          <div class="flex items-start justify-between">
+            <div class="w-12 h-12 rounded-xl bg-red-100 text-red-700 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+              🔥
+            </div>
+            <button onclick="speakText('To roast. Roasting. Roast the whole sea bass in a preheated oven at two hundred degrees Celsius.')" class="p-2 rounded-xl bg-amber-50 text-amber-700 hover:bg-amber-100 border border-amber-200 transition-colors" title="Listen to pronunciation">
+              🔊
+            </button>
+          </div>
+          <div class="mt-4">
+            <div class="flex items-baseline space-x-2">
+              <h3 class="text-2xl font-serif font-bold text-slate-900">To Roast</h3>
+              <span class="text-xs text-slate-400 font-mono">/roʊst/</span>
+            </div>
+            <p class="text-xs font-semibold text-amber-600 mt-0.5">Español: Asar al horno (carnes, pescados, verduras)</p>
+            <p class="text-sm text-slate-600 mt-2.5">
+              Cooking uncovered in an oven using hot, dry circulating air, creating caramelization and crispy skin.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 text-xs space-y-1.5">
+            <p class="text-slate-500 font-medium"><strong class="text-slate-700">Kitchen command:</strong> "Slide the roast lamb into the main oven!"</p>
+            <p class="text-slate-500 font-medium"><strong class="text-slate-700">Claudia's dish:</strong> Mallorcan roasted suckling pig (porcella) or roasted peppers.</p>
+          </div>
+        </div>
+
+        <!-- Card 5: Grilling -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-sm hover:shadow-md transition-all group hover:border-amber-300">
+          <div class="flex items-start justify-between">
+            <div class="w-12 h-12 rounded-xl bg-stone-100 text-stone-800 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+              🥩
+            </div>
+            <button onclick="speakText('To grill. Grilling. Sear the red prawns on the hot grill for one minute on each side.')" class="p-2 rounded-xl bg-amber-50 text-amber-700 hover:bg-amber-100 border border-amber-200 transition-colors" title="Listen to pronunciation">
+              🔊
+            </button>
+          </div>
+          <div class="mt-4">
+            <div class="flex items-baseline space-x-2">
+              <h3 class="text-2xl font-serif font-bold text-slate-900">To Grill</h3>
+              <span class="text-xs text-slate-400 font-mono">/ɡrɪl/</span>
+            </div>
+            <p class="text-xs font-semibold text-amber-600 mt-0.5">Español: Asar a la parrilla / a la brasa / a la plancha</p>
+            <p class="text-sm text-slate-600 mt-2.5">
+              Cooking food directly over a radiant heat source (open fire, charcoal, gas grill or flattop).
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 text-xs space-y-1.5">
+            <p class="text-slate-500 font-medium"><strong class="text-slate-700">Kitchen command:</strong> "Fire two grilled ribeyes for Table 6!"</p>
+            <p class="text-slate-500 font-medium"><strong class="text-slate-700">Claudia's dish:</strong> Grilled Sóller prawns with flaky sea salt.</p>
+          </div>
+        </div>
+
+        <!-- Card 6: Poaching -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-sm hover:shadow-md transition-all group hover:border-amber-300">
+          <div class="flex items-start justify-between">
+            <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
+              🥚
+            </div>
+            <button onclick="speakText('To poach. Poaching. Gently poach the eggs or fresh hake in warm aromatic broth.')" class="p-2 rounded-xl bg-amber-50 text-amber-700 hover:bg-amber-100 border border-amber-200 transition-colors" title="Listen to pronunciation">
+              🔊
+            </button>
+          </div>
+          <div class="mt-4">
+            <div class="flex items-baseline space-x-2">
+              <h3 class="text-2xl font-serif font-bold text-slate-900">To Poach</h3>
+              <span class="text-xs text-slate-400 font-mono">/poʊtʃ/</span>
+            </div>
+            <p class="text-xs font-semibold text-amber-600 mt-0.5">Español: Escalfar / Pochar en líquido suave</p>
+            <p class="text-sm text-slate-600 mt-2.5">
+              Gently submerging delicate ingredients in liquid kept at <strong>70°C – 82°C</strong> without bubbling.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 text-xs space-y-1.5">
+            <p class="text-slate-500 font-medium"><strong class="text-slate-700">Kitchen command:</strong> "Poach two farm eggs for the brunch special!"</p>
+            <p class="text-slate-500 font-medium"><strong class="text-slate-700">Claudia's dish:</strong> Poached cod in olive oil (bacalao confitado).</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Quick Knife Skills & Prep Verbs Expandable Bar -->
+      <div class="mt-12 bg-white rounded-2xl p-6 border border-amber-200 shadow-sm">
+        <h3 class="text-lg font-serif font-bold text-slate-900 flex items-center space-x-2 mb-4">
+          <span>🔪</span>
+          <span>Chef's Prep Verbs: Cutting & Handling (Verbos de Preparación)</span>
+        </h3>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 text-center">
+          
+          <button onclick="speakText('To chop. Roughly chop the parsley.')" class="p-3 rounded-xl bg-slate-50 hover:bg-amber-50 border border-slate-200 hover:border-amber-300 transition-all text-left">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-slate-800">To Chop</span>
+              <span class="text-xs text-amber-600">🔊</span>
+            </div>
+            <p class="text-[11px] text-slate-500 mt-1">Picar en trozos</p>
+          </button>
+
+          <button onclick="speakText('To dice. Finely dice the onions into small cubes.')" class="p-3 rounded-xl bg-slate-50 hover:bg-amber-50 border border-slate-200 hover:border-amber-300 transition-all text-left">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-slate-800">To Dice</span>
+              <span class="text-xs text-amber-600">🔊</span>
+            </div>
+            <p class="text-[11px] text-slate-500 mt-1">Cortar en dados</p>
+          </button>
+
+          <button onclick="speakText('To mince. Mince the garlic cloves finely.')" class="p-3 rounded-xl bg-slate-50 hover:bg-amber-50 border border-slate-200 hover:border-amber-300 transition-all text-left">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-slate-800">To Mince</span>
+              <span class="text-xs text-amber-600">🔊</span>
+            </div>
+            <p class="text-[11px] text-slate-500 mt-1">Picar muy fino</p>
+          </button>
+
+          <button onclick="speakText('To slice. Thinly slice the tomatoes and cucumbers.')" class="p-3 rounded-xl bg-slate-50 hover:bg-amber-50 border border-slate-200 hover:border-amber-300 transition-all text-left">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-slate-800">To Slice</span>
+              <span class="text-xs text-amber-600">🔊</span>
+            </div>
+            <p class="text-[11px] text-slate-500 mt-1">Cortar en rodajas</p>
+          </button>
+
+          <button onclick="speakText('To peel. Peel the potatoes and carrots.')" class="p-3 rounded-xl bg-slate-50 hover:bg-amber-50 border border-slate-200 hover:border-amber-300 transition-all text-left">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-slate-800">To Peel</span>
+              <span class="text-xs text-amber-600">🔊</span>
+            </div>
+            <p class="text-[11px] text-slate-500 mt-1">Pelar</p>
+          </button>
+
+          <button onclick="speakText('To whisk. Whisk the eggs and cream until fluffy.')" class="p-3 rounded-xl bg-slate-50 hover:bg-amber-50 border border-slate-200 hover:border-amber-300 transition-all text-left">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-slate-800">To Whisk</span>
+              <span class="text-xs text-amber-600">🔊</span>
+            </div>
+            <p class="text-[11px] text-slate-500 mt-1">Batir con varilla</p>
+          </button>
+
+          <button onclick="speakText('To drizzle. Drizzle extra virgin olive oil over the dish.')" class="p-3 rounded-xl bg-slate-50 hover:bg-amber-50 border border-slate-200 hover:border-amber-300 transition-all text-left">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-slate-800">To Drizzle</span>
+              <span class="text-xs text-amber-600">🔊</span>
+            </div>
+            <p class="text-[11px] text-slate-500 mt-1">Rociar un hilo</p>
+          </button>
+
+          <button onclick="speakText('To season. Season with sea salt and freshly cracked black pepper.')" class="p-3 rounded-xl bg-slate-50 hover:bg-amber-50 border border-slate-200 hover:border-amber-300 transition-all text-left">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-slate-800">To Season</span>
+              <span class="text-xs text-amber-600">🔊</span>
+            </div>
+            <p class="text-[11px] text-slate-500 mt-1">Sazonar / Salpimentar</p>
+          </button>
+
+          <button onclick="speakText('To garnish. Garnish with fresh micro-herbs.')" class="p-3 rounded-xl bg-slate-50 hover:bg-amber-50 border border-slate-200 hover:border-amber-300 transition-all text-left">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-slate-800">To Garnish</span>
+              <span class="text-xs text-amber-600">🔊</span>
+            </div>
+            <p class="text-[11px] text-slate-500 mt-1">Decorar el plato</p>
+          </button>
+
+          <button onclick="speakText('To glaze. Glaze the pork belly with reduced honey glaze.')" class="p-3 rounded-xl bg-slate-50 hover:bg-amber-50 border border-slate-200 hover:border-amber-300 transition-all text-left">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-slate-800">To Glaze</span>
+              <span class="text-xs text-amber-600">🔊</span>
+            </div>
+            <p class="text-[11px] text-slate-500 mt-1">Glasear</p>
+          </button>
+
+          <button onclick="speakText('To deglaze. Deglaze the pan with dry white wine.')" class="p-3 rounded-xl bg-slate-50 hover:bg-amber-50 border border-slate-200 hover:border-amber-300 transition-all text-left">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-slate-800">To Deglaze</span>
+              <span class="text-xs text-amber-600">🔊</span>
+            </div>
+            <p class="text-[11px] text-slate-500 mt-1">Desglasar</p>
+          </button>
+
+          <button onclick="speakText('To knead. Knead the bread dough until elastic.')" class="p-3 rounded-xl bg-slate-50 hover:bg-amber-50 border border-slate-200 hover:border-amber-300 transition-all text-left">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold text-slate-800">To Knead</span>
+              <span class="text-xs text-amber-600">🔊</span>
+            </div>
+            <p class="text-[11px] text-slate-500 mt-1">Amasar</p>
+          </button>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 2: Restaurant Ingredients Guide (Interactive Categorized Dictionary) -->
+  <section id="ingredients" class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+        <div>
+          <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-olive-100 text-olive-800 border border-olive-200 uppercase tracking-widest">
+            The Restaurant Pantry • Ingredientes del Restaurante
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-serif font-bold text-slate-900 mt-2">
+            Every Ingredient Claudia Needs
+          </h2>
+          <p class="text-slate-600 text-sm sm:text-base mt-1">
+            Carefully curated for Mediterranean and Majorcan gastronomy. Click any word to hear natural audio.
+          </p>
+        </div>
+
+        <!-- Live Search Input -->
+        <div class="relative w-full md:w-80">
+          <input type="text" id="ingredientSearch" oninput="filterIngredients()" placeholder="Search ingredients (e.g. garlic, shrimp)..." 
+                 class="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-amber-500/50 focus:border-amber-500 bg-white shadow-sm text-sm">
+          <svg class="w-5 h-5 text-slate-400 absolute left-3 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        </div>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="flex flex-wrap gap-2 mb-8 border-b border-slate-200 pb-3" id="categoryTabs">
+        <button onclick="setCategory('all')" class="cat-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-amber-500 text-white shadow-sm transition-all" data-category="all">
+          All Ingredients (Todos)
+        </button>
+        <button onclick="setCategory('produce')" class="cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 transition-all" data-category="produce">
+          🥦 Fresh Produce & Herbs
+        </button>
+        <button onclick="setCategory('seafood')" class="cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 transition-all" data-category="seafood">
+          🦐 Seafood & Fish (Pescados y Mariscos)
+        </button>
+        <button onclick="setCategory('meat')" class="cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 transition-all" data-category="meat">
+          🥩 Meats & Charcuterie
+        </button>
+        <button onclick="setCategory('oils')" class="cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 transition-all" data-category="oils">
+          🫒 Oils, Vinegars & Seasonings
+        </button>
+        <button onclick="setCategory('dairy')" class="cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 transition-all" data-category="dairy">
+          🧀 Dairy, Grains & Bakery
+        </button>
+      </div>
+
+      <!-- Ingredient Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4" id="ingredientGrid">
+        <!-- Javascript dynamically populates or updates this, but initial items are statically rendered for zero latency -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 3: Kitchen Communication, Tickets & Slang -->
+  <section id="phrases" class="py-16 bg-gradient-to-b from-white to-amber-50/50 border-t border-amber-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-red-100 text-red-800 border border-red-200 uppercase tracking-widest">
+          Service In Action • Servicio y Comunicación
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-slate-900 mt-3">
+          Kitchen Calls, Tickets & Guest Communication
+        </h2>
+        <p class="text-slate-600 mt-2 text-base">
+          Crucial English phrases used during busy lunch and dinner services in fine-dining and seaside bistros.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        
+        <!-- Column 1: Kitchen Brigade Calls (Safety & Timing) -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center space-x-3 mb-4">
+              <span class="w-10 h-10 rounded-xl bg-red-100 text-red-600 flex items-center justify-center font-bold text-xl">⚠️</span>
+              <div>
+                <h3 class="font-serif font-bold text-lg text-slate-900">Brigade Safety & Movement</h3>
+                <p class="text-xs text-slate-500">Llamadas de seguridad en cocina</p>
+              </div>
+            </div>
+
+            <div class="space-y-3">
+              <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 hover:border-amber-300 transition-colors">
+                <div class="flex justify-between items-start">
+                  <strong class="text-sm text-slate-800">"Behind you!"</strong>
+                  <button onclick="speakText('Behind you!')" class="text-amber-600 text-xs hover:text-amber-700">🔊</button>
+                </div>
+                <p class="text-xs text-slate-500 mt-0.5">¡Atrás! / ¡Paso detrás!</p>
+              </div>
+
+              <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 hover:border-amber-300 transition-colors">
+                <div class="flex justify-between items-start">
+                  <strong class="text-sm text-slate-800">"Hot pan coming through!"</strong>
+                  <button onclick="speakText('Hot pan coming through!')" class="text-amber-600 text-xs hover:text-amber-700">🔊</button>
+                </div>
+                <p class="text-xs text-slate-500 mt-0.5">¡Sartén caliente, cuidado!</p>
+              </div>
+
+              <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 hover:border-amber-300 transition-colors">
+                <div class="flex justify-between items-start">
+                  <strong class="text-sm text-slate-800">"Sharp knife! Corner!"</strong>
+                  <button onclick="speakText('Sharp knife! Corner!')" class="text-amber-600 text-xs hover:text-amber-700">🔊</button>
+                </div>
+                <p class="text-xs text-slate-500 mt-0.5">¡Cuchillo afilado! ¡Esquina!</p>
+              </div>
+
+              <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 hover:border-amber-300 transition-colors">
+                <div class="flex justify-between items-start">
+                  <strong class="text-sm text-slate-800">"Heard, Chef!" / "Yes, Chef!"</strong>
+                  <button onclick="speakText('Heard, Chef!')" class="text-amber-600 text-xs hover:text-amber-700">🔊</button>
+                </div>
+                <p class="text-xs text-slate-500 mt-0.5">¡Oído, chef! (Entendido y confirmado)</p>
+              </div>
+            </div>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-amber-700 font-medium">
+            Pro tip: Saying "Heard" prevents duplicate orders and kitchen accidents.
+          </div>
+        </div>
+
+        <!-- Column 2: The Ticket Pass & Timings -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center space-x-3 mb-4">
+              <span class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-xl">📋</span>
+              <div>
+                <h3 class="font-serif font-bold text-lg text-slate-900">Pass & Order Calling</h3>
+                <p class="text-xs text-slate-500">Pase, comandas y tiempos</p>
+              </div>
+            </div>
+
+            <div class="space-y-3">
+              <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 hover:border-amber-300 transition-colors">
+                <div class="flex justify-between items-start">
+                  <strong class="text-sm text-slate-800">"Order in! Table 4, two covers."</strong>
+                  <button onclick="speakText('Order in! Table four, two covers.')" class="text-amber-600 text-xs hover:text-amber-700">🔊</button>
+                </div>
+                <p class="text-xs text-slate-500 mt-0.5">¡Entra comanda! Mesa 4, dos personas.</p>
+              </div>
+
+              <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 hover:border-amber-300 transition-colors">
+                <div class="flex justify-between items-start">
+                  <strong class="text-sm text-slate-800">"How long on the sea bass?"</strong>
+                  <button onclick="speakText('How long on the sea bass?')" class="text-amber-600 text-xs hover:text-amber-700">🔊</button>
+                </div>
+                <p class="text-xs text-slate-500 mt-0.5">¿Cuánto le falta a la lubina?</p>
+              </div>
+
+              <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 hover:border-amber-300 transition-colors">
+                <div class="flex justify-between items-start">
+                  <strong class="text-sm text-slate-800">"Two minutes out, Chef!"</strong>
+                  <button onclick="speakText('Two minutes out, Chef!')" class="text-amber-600 text-xs hover:text-amber-700">🔊</button>
+                </div>
+                <p class="text-xs text-slate-500 mt-0.5">¡A dos minutos, Chef! (Listo en 2 min)</p>
+              </div>
+
+              <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 hover:border-amber-300 transition-colors">
+                <div class="flex justify-between items-start">
+                  <strong class="text-sm text-slate-800">"We are 86 on the Sóller red prawns!"</strong>
+                  <button onclick="speakText('We are eighty-six on the red prawns!')" class="text-amber-600 text-xs hover:text-amber-700">🔊</button>
+                </div>
+                <p class="text-xs text-slate-500 mt-0.5">"Eighty-six" = ¡Se nos han agotado! / ¡No queda!</p>
+              </div>
+            </div>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-amber-700 font-medium">
+            "86" is universal kitchen slang meaning an item is sold out.
+          </div>
+        </div>
+
+        <!-- Column 3: Guest Allergies & Steaks -->
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="flex items-center space-x-3 mb-4">
+              <span class="w-10 h-10 rounded-xl bg-teal-100 text-teal-700 flex items-center justify-center font-bold text-xl">🍤</span>
+              <div>
+                <h3 class="font-serif font-bold text-lg text-slate-900">Allergies & Doneness</h3>
+                <p class="text-xs text-slate-500">Alergias y puntos de carne</p>
+              </div>
+            </div>
+
+            <div class="space-y-3">
+              <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 hover:border-amber-300 transition-colors">
+                <div class="flex justify-between items-start">
+                  <strong class="text-sm text-slate-800">"Gluten-free / Shellfish allergy"</strong>
+                  <button onclick="speakText('Gluten-free. Shellfish allergy. Dairy intolerance.')" class="text-amber-600 text-xs hover:text-amber-700">🔊</button>
+                </div>
+                <p class="text-xs text-slate-500 mt-0.5">Sin gluten / Alergia al marisco</p>
+              </div>
+
+              <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 hover:border-amber-300 transition-colors">
+                <div class="flex justify-between items-start">
+                  <strong class="text-sm text-slate-800">"Meat temperatures / Doneness:"</strong>
+                  <button onclick="speakText('Rare, medium-rare, medium, medium-well, well-done.')" class="text-amber-600 text-xs hover:text-amber-700">🔊</button>
+                </div>
+                <p class="text-xs text-slate-500 mt-0.5">Poco hecho, al punto menos, al punto, muy hecho</p>
+              </div>
+
+              <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 hover:border-amber-300 transition-colors">
+                <div class="flex justify-between items-start">
+                  <strong class="text-sm text-slate-800">"Dressing on the side, please."</strong>
+                  <button onclick="speakText('Dressing on the side, please.')" class="text-amber-600 text-xs hover:text-amber-700">🔊</button>
+                </div>
+                <p class="text-xs text-slate-500 mt-0.5">El aliño / salsa aparte, por favor.</p>
+              </div>
+
+              <div class="p-3 bg-slate-50 rounded-xl border border-slate-100 hover:border-amber-300 transition-colors">
+                <div class="flex justify-between items-start">
+                  <strong class="text-sm text-slate-800">"Special of the day"</strong>
+                  <button onclick="speakText('Today our special of the day is fresh local sea bass roasted with rosemary and lemon.')" class="text-amber-600 text-xs hover:text-amber-700">🔊</button>
+                </div>
+                <p class="text-xs text-slate-500 mt-0.5">El plato o sugerencia del día.</p>
+              </div>
+            </div>
+          </div>
+          <div class="mt-4 pt-3 border-t border-slate-100 text-[11px] text-teal-700 font-medium">
+            Crucial: Always double check pans for nut and shellfish cross-contamination!
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 4: Interactive Flashcards & Flip Cards -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-banana-200 text-amber-900 border border-banana-300 uppercase tracking-widest">
+          Interactive Study Cards • Tarjetas de Estudio
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-slate-900 mt-3">
+          Click to Flip & Memorize
+        </h2>
+        <p class="text-slate-600 text-sm sm:text-base mt-2">
+          Click any card to reveal its culinary meaning, phonetic tip, and kitchen usage!
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="flashcards-container">
+        
+        <!-- Flashcard 1 -->
+        <div class="perspective h-64 cursor-pointer" onclick="flipCard(this)">
+          <div class="relative w-full h-full duration-500 transform-style-3d shadow-md hover:shadow-lg rounded-2xl transition-transform border border-amber-100">
+            <!-- Front -->
+            <div class="absolute inset-0 w-full h-full bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 flex flex-col justify-between backface-hidden">
+              <div class="flex justify-between items-start">
+                <span class="text-2xl">🍲</span>
+                <span class="text-xs font-bold uppercase tracking-wider text-amber-600 bg-white/80 px-2.5 py-1 rounded-lg">Action</span>
+              </div>
+              <div class="text-center">
+                <h4 class="text-2xl font-serif font-bold text-slate-900">Boiling</h4>
+                <p class="text-xs text-slate-500 mt-1">/ˈbɔɪ.lɪŋ/</p>
+              </div>
+              <div class="text-center text-xs text-amber-700 font-semibold flex items-center justify-center space-x-1">
+                <span>🔄 Click to see Spanish</span>
+              </div>
+            </div>
+            <!-- Back -->
+            <div class="absolute inset-0 w-full h-full bg-amber-600 text-white rounded-2xl p-6 flex flex-col justify-between rotate-y-180 backface-hidden">
+              <div>
+                <span class="text-xs uppercase tracking-wider font-bold text-amber-200">Español</span>
+                <h4 class="text-xl font-serif font-bold mt-1">Hervir / A borbotones</h4>
+              </div>
+              <p class="text-xs text-amber-100 leading-relaxed">
+                "Bring the pot of water to a rolling boil." Ideal for blanching greens and boiling pasta al dente.
+              </p>
+              <button onclick="event.stopPropagation(); speakText('Boiling. Bring the pot of water to a rolling boil.')" class="w-full py-1.5 rounded-lg bg-white/20 hover:bg-white/30 text-xs font-semibold">
+                🔊 Listen in English
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flashcard 2 -->
+        <div class="perspective h-64 cursor-pointer" onclick="flipCard(this)">
+          <div class="relative w-full h-full duration-500 transform-style-3d shadow-md hover:shadow-lg rounded-2xl transition-transform border border-amber-100">
+            <!-- Front -->
+            <div class="absolute inset-0 w-full h-full bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 flex flex-col justify-between backface-hidden">
+              <div class="flex justify-between items-start">
+                <span class="text-2xl">🫒</span>
+                <span class="text-xs font-bold uppercase tracking-wider text-olive-600 bg-white/80 px-2.5 py-1 rounded-lg">Pantry</span>
+              </div>
+              <div class="text-center">
+                <h4 class="text-xl font-serif font-bold text-slate-900">Extra Virgin Olive Oil</h4>
+                <p class="text-xs text-slate-500 mt-1 font-mono">/ˈɒl.ɪv ɔɪl/</p>
+              </div>
+              <div class="text-center text-xs text-amber-700 font-semibold flex items-center justify-center space-x-1">
+                <span>🔄 Click to see Spanish</span>
+              </div>
+            </div>
+            <!-- Back -->
+            <div class="absolute inset-0 w-full h-full bg-olive-800 text-white rounded-2xl p-6 flex flex-col justify-between rotate-y-180 backface-hidden">
+              <div>
+                <span class="text-xs uppercase tracking-wider font-bold text-olive-300">Español & Mallorquín</span>
+                <h4 class="text-xl font-serif font-bold mt-1">Aceite de oliva virgen extra (Oli de Mallorca)</h4>
+              </div>
+              <p class="text-xs text-olive-100 leading-relaxed">
+                "Finish the carpaccio with a generous drizzle of cold-pressed extra virgin olive oil."
+              </p>
+              <button onclick="event.stopPropagation(); speakText('Extra virgin olive oil. Finish with a generous drizzle of olive oil.')" class="w-full py-1.5 rounded-lg bg-white/20 hover:bg-white/30 text-xs font-semibold">
+                🔊 Listen in English
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flashcard 3 -->
+        <div class="perspective h-64 cursor-pointer" onclick="flipCard(this)">
+          <div class="relative w-full h-full duration-500 transform-style-3d shadow-md hover:shadow-lg rounded-2xl transition-transform border border-amber-100">
+            <!-- Front -->
+            <div class="absolute inset-0 w-full h-full bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 flex flex-col justify-between backface-hidden">
+              <div class="flex justify-between items-start">
+                <span class="text-2xl">🦐</span>
+                <span class="text-xs font-bold uppercase tracking-wider text-medsea-700 bg-white/80 px-2.5 py-1 rounded-lg">Seafood</span>
+              </div>
+              <div class="text-center">
+                <h4 class="text-2xl font-serif font-bold text-slate-900">Red Prawns</h4>
+                <p class="text-xs text-slate-500 mt-1 font-mono">/prɔːnz/</p>
+              </div>
+              <div class="text-center text-xs text-amber-700 font-semibold flex items-center justify-center space-x-1">
+                <span>🔄 Click to see Spanish</span>
+              </div>
+            </div>
+            <!-- Back -->
+            <div class="absolute inset-0 w-full h-full bg-medsea-900 text-white rounded-2xl p-6 flex flex-col justify-between rotate-y-180 backface-hidden">
+              <div>
+                <span class="text-xs uppercase tracking-wider font-bold text-sky-300">Mallorca Treasure</span>
+                <h4 class="text-xl font-serif font-bold mt-1">Gambas Rojas (de Sóller)</h4>
+              </div>
+              <p class="text-xs text-sky-100 leading-relaxed">
+                In British English they say <em>prawns</em>, in American English they say <em>shrimp</em>.
+              </p>
+              <button onclick="event.stopPropagation(); speakText('Red prawns. Also known as Mediterranean shrimp.')" class="w-full py-1.5 rounded-lg bg-white/20 hover:bg-white/30 text-xs font-semibold">
+                🔊 Listen in English
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flashcard 4 -->
+        <div class="perspective h-64 cursor-pointer" onclick="flipCard(this)">
+          <div class="relative w-full h-full duration-500 transform-style-3d shadow-md hover:shadow-lg rounded-2xl transition-transform border border-amber-100">
+            <!-- Front -->
+            <div class="absolute inset-0 w-full h-full bg-gradient-to-br from-amber-50 to-orange-50 rounded-2xl p-6 flex flex-col justify-between backface-hidden">
+              <div class="flex justify-between items-start">
+                <span class="text-2xl">🔥</span>
+                <span class="text-xs font-bold uppercase tracking-wider text-red-600 bg-white/80 px-2.5 py-1 rounded-lg">Action</span>
+              </div>
+              <div class="text-center">
+                <h4 class="text-2xl font-serif font-bold text-slate-900">Simmering</h4>
+                <p class="text-xs text-slate-500 mt-1 font-mono">/ˈsɪm.ər.ɪŋ/</p>
+              </div>
+              <div class="text-center text-xs text-amber-700 font-semibold flex items-center justify-center space-x-1">
+                <span>🔄 Click to see Spanish</span>
+              </div>
+            </div>
+            <!-- Back -->
+            <div class="absolute inset-0 w-full h-full bg-terracotta-500 text-white rounded-2xl p-6 flex flex-col justify-between rotate-y-180 backface-hidden">
+              <div>
+                <span class="text-xs uppercase tracking-wider font-bold text-orange-200">Español</span>
+                <h4 class="text-xl font-serif font-bold mt-1">Hervir a fuego lento</h4>
+              </div>
+              <p class="text-xs text-orange-100 leading-relaxed">
+                Gentle bubbles breaking the surface. "Simmer the shellfish reduction until thick."
+              </p>
+              <button onclick="event.stopPropagation(); speakText('Simmering. Simmer the sauce gently on low heat.')" class="w-full py-1.5 rounded-lg bg-white/20 hover:bg-white/30 text-xs font-semibold">
+                🔊 Listen in English
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Featured Game Banner Section -->
+  <section class="py-12 bg-gradient-to-r from-amber-500 via-orange-500 to-terracotta-500 text-white relative overflow-hidden shadow-inner">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <div class="lg:col-span-8 space-y-4">
+          <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-xs font-bold tracking-wider uppercase">
+            <span>📖 Teaching Mode & 🎮 Game</span>
+            <span>•</span>
+            <span>Paso a Paso y Juego</span>
+          </div>
+
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold tracking-tight">
+            Teaching Mode & Guess the Dish!
+          </h2>
+
+          <p class="text-white/90 text-sm sm:text-base max-w-2xl leading-relaxed">
+            Walk through all 8 authentic dishes one-by-one in <strong>Teaching Mode</strong> with full English ingredient audio, cooking verbs, and guest table pitch scripts, or test your skills in <strong>Guessing Game Mode</strong>!
+          </p>
+
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <a href="guess_the_dish.html" class="px-7 py-3.5 rounded-2xl bg-white text-slate-900 font-extrabold text-sm sm:text-base hover:bg-banana-100 shadow-xl transition-transform hover:scale-105 flex items-center space-x-2">
+              <span>🚀 Open Teaching Mode & Game</span>
+            </a>
+            <span class="text-xs text-white/80 font-medium">✨ Step-by-step walkthrough • Voice audio • Table scripts</span>
+          </div>
+        </div>
+
+        <div class="lg:col-span-4 flex justify-center">
+          <div class="relative w-64 aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-4 border-white/90 transform rotate-2 hover:rotate-0 transition-transform">
+            <img src="images/dish_seafood_paella.jpg" alt="Preview of Guess the Dish game" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-3">
+              <span class="text-xs font-bold text-banana-200">Round 1 Preview: Seafood Paella</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Interactive Quiz & Practice -->
+  <section id="quiz" class="py-16 bg-gradient-to-b from-amber-50/60 to-orange-50/80 border-t border-amber-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-10">
+        <span class="px-3.5 py-1 rounded-full text-xs font-bold bg-amber-200 text-amber-900 border border-amber-300 uppercase tracking-widest">
+          Knowledge Check • Autoevaluación
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-slate-900 mt-2">
+          Chef Claudia's Kitchen Challenge
+        </h2>
+        <p class="text-slate-600 text-sm mt-1">
+          Test your memory! Pick the right English culinary term for each situation.
+        </p>
+      </div>
+
+      <!-- Quiz Card Container -->
+      <div class="bg-white rounded-3xl p-6 sm:p-8 border border-amber-200 shadow-xl" id="quiz-box">
+        
+        <div class="flex items-center justify-between pb-4 border-b border-slate-100 mb-6">
+          <span class="text-xs font-bold text-amber-600 uppercase tracking-wider" id="quiz-progress">Question 1 of 5</span>
+          <span class="text-xs font-bold bg-amber-100 text-amber-800 px-3 py-1 rounded-full" id="quiz-score">Score: 0 / 5</span>
+        </div>
+
+        <div id="quiz-content">
+          <div class="flex items-start space-x-3 mb-6">
+            <span class="text-3xl" id="quiz-icon">🍲</span>
+            <div>
+              <h3 class="text-lg sm:text-xl font-serif font-bold text-slate-900" id="quiz-question">
+                What is the English word for cooking food in water with rapid, vigorous bubbles at 100°C?
+              </h3>
+              <p class="text-xs text-slate-500 mt-1" id="quiz-hint">Español: ¿Cómo se dice "hervir a borbotones"?</p>
+            </div>
+          </div>
+
+          <!-- Options -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6" id="quiz-options">
+            <!-- options inserted by JS -->
+          </div>
+
+          <!-- Feedback message -->
+          <div id="quiz-feedback" class="hidden p-4 rounded-xl text-sm font-semibold mb-6"></div>
+
+          <!-- Next Button -->
+          <div class="flex justify-end">
+            <button id="quiz-next-btn" onclick="nextQuestion()" class="hidden px-6 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-semibold text-sm shadow-md transition-all">
+              Next Question ➡️
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer with encouragement for Claudia -->
+  <footer class="bg-slate-900 text-slate-300 py-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6">
+      
+      <div>
+        <div class="flex items-center justify-center sm:justify-start space-x-2">
+          <span class="text-2xl">🇪🇸</span>
+          <h3 class="text-lg font-serif font-bold text-white">¡Mucho éxito en la cocina, Chef Claudia!</h3>
+        </div>
+        <p class="text-xs text-slate-400 mt-1">
+          Made with love for Claudia's restaurant career in Mallorca. Keep cooking, keep speaking!
+        </p>
+      </div>
+
+      <div class="flex items-center space-x-3 text-xs text-slate-400">
+        <span>🏝️ Palma • Sóller • Deià • Valldemossa</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Script with comprehensive data, audio synthesis, and interactive widgets -->
+  <script>
+    // Audio Speech Synthesis configuration
+    let audioSpeed = 1.0;
+    
+    function setAudioSpeed(speed) {
+      audioSpeed = speed;
+      document.getElementById('speed-slow').className = speed === 0.8 
+        ? "px-2 py-0.5 rounded-md bg-amber-500 text-white font-bold transition-colors"
+        : "px-2 py-0.5 rounded-md hover:bg-amber-100 transition-colors";
+      document.getElementById('speed-normal').className = speed === 1.0 
+        ? "px-2 py-0.5 rounded-md bg-amber-500 text-white font-bold transition-colors"
+        : "px-2 py-0.5 rounded-md hover:bg-amber-100 transition-colors";
+    }
+
+    function speakText(text) {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel(); // Stop any pending speech
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.rate = audioSpeed;
+        utterance.pitch = 1.0;
+        
+        // Prefer natural English voices
+        const voices = window.speechSynthesis.getVoices();
+        const enVoice = voices.find(v => v.lang.startsWith('en') && (v.name.includes('Natural') || v.name.includes('Google') || v.name.includes('Samantha') || v.name.includes('Daniel') || v.name.includes('Karen')));
+        if (enVoice) {
+          utterance.voice = enVoice;
+        } else {
+          const genericEn = voices.find(v => v.lang.startsWith('en'));
+          if (genericEn) utterance.voice = genericEn;
+        }
+
+        window.speechSynthesis.speak(utterance);
+      } else {
+        alert("Text-to-speech audio is not supported in this browser. Please use Chrome, Edge, or Safari.");
+      }
+    }
+
+    function playGreeting() {
+      speakText("Hello Chef Claudia! Welcome to your personalized English culinary lesson here in beautiful Mallorca. Let's master the ingredients and cooking techniques together!");
+    }
+
+    function flipCard(element) {
+      const card = element.querySelector('.transform-style-3d');
+      card.classList.toggle('rotate-y-180');
+    }
+
+    // Comprehensive Database of Ingredients for Claudia
+    const ingredientsData = [
+      // Fresh Produce & Herbs
+      { name: "Garlic", es: "Ajo", cat: "produce", icon: "🧄", phon: "/ˈɡɑːr.lɪk/", example: "Minced garlic for the sofrito." },
+      { name: "Onion", es: "Cebolla", cat: "produce", icon: "🧅", phon: "/ˈʌn.jən/", example: "Finely diced sweet onions." },
+      { name: "Shallot", es: "Chalota / Escalonia", cat: "produce", icon: "🧅", phon: "/ʃəˈlɒt/", example: "Caramelized shallots for sauces." },
+      { name: "Tomato", es: "Tomate (Tomàtiga de ramellet)", cat: "produce", icon: "🍅", phon: "/təˈmeɪ.toʊ/", example: "Grated ripe tomatoes for pa amb oli." },
+      { name: "Lemon", es: "Limón", cat: "produce", icon: "🍋", phon: "/ˈlem.ən/", example: "Fresh lemon juice and lemon zest." },
+      { name: "Rosemary", es: "Romero", cat: "produce", icon: "🌿", phon: "/ˈroʊz.mər.i/", example: "Sprigs of fresh aromatic rosemary." },
+      { name: "Thyme", es: "Tomillo", cat: "produce", icon: "🌿", phon: "/taɪm/", example: "Fresh thyme leaves (silent 'h')." },
+      { name: "Saffron", es: "Azafrán", cat: "produce", icon: "🌾", phon: "/ˈsæf.rən/", example: "Toasted saffron threads for golden paella." },
+      { name: "Bell Pepper", es: "Pimiento morrón", cat: "produce", icon: "🫑", phon: "/bel ˈpep.ər/", example: "Roasted red and green bell peppers." },
+      { name: "Aubergine / Eggplant", es: "Berenjena", cat: "produce", icon: "🍆", phon: "/ˈoʊ.bɚ.ʒiːn/", example: "Grilled eggplant for Mallorcan tumbet." },
+      { name: "Courgette / Zucchini", es: "Calabacín", cat: "produce", icon: "🥒", phon: "/kʊərˈʒet/", example: "Thinly sliced zucchini sautéed in oil." },
+      { name: "Mushrooms", es: "Champiñones / Setas (Esclata-sangs)", cat: "produce", icon: "🍄", phon: "/ˈmʌʃ.ruːmz/", example: "Wild mushrooms pan-seared with garlic." },
+      { name: "Potato", es: "Patata", cat: "produce", icon: "🥔", phon: "/pəˈteɪ.toʊ/", example: "Crispy roasted potatoes with sea salt." },
+      { name: "Parsley", es: "Perejil (plano)", cat: "produce", icon: "🌿", phon: "/ˈpɑːr.sli/", example: "Finely chopped flat-leaf parsley." },
+      { name: "Bay Leaf", es: "Laurel", cat: "produce", icon: "🍃", phon: "/beɪ liːf/", example: "Add two dried bay leaves to the simmering broth." },
+
+      // Seafood & Fish
+      { name: "Red Prawns", es: "Gambas rojas (de Sóller)", cat: "seafood", icon: "🦐", phon: "/red prɔːnz/", example: "Grilled red prawns with flaky sea salt." },
+      { name: "Sea Bass", es: "Lubina", cat: "seafood", icon: "🐟", phon: "/siː bæs/", example: "Whole sea bass baked in salt crust." },
+      { name: "Sea Bream", es: "Dorada", cat: "seafood", icon: "🐟", phon: "/siː briːm/", example: "Pan-roasted sea bream with lemon oil." },
+      { name: "Octopus", es: "Pulpo", cat: "seafood", icon: "🐙", phon: "/ˈɒk.tə.pəs/", example: "Tender boiled and grilled octopus tentacles." },
+      { name: "Squid / Calamari", es: "Calamar", cat: "seafood", icon: "🦑", phon: "/skwɪd/", example: "Flash-fried squid with alioli." },
+      { name: "Mussels", es: "Mejillones", cat: "seafood", icon: "🦪", phon: "/ˈmʌs.əlz/", example: "Steamed mussels in white wine and garlic." },
+      { name: "Clams", es: "Almejas", cat: "seafood", icon: "🐚", phon: "/klæmz/", example: "Fresh clams simmered in sherry and garlic." },
+      { name: "Hake", es: "Merluza", cat: "seafood", icon: "🐟", phon: "/heɪk/", example: "Poached hake in salsa verde." },
+      { name: "Monkfish", es: "Rape", cat: "seafood", icon: "🐟", phon: "/ˈmʌŋk.fɪʃ/", example: "Firm monkfish medallions for fish stews." },
+      { name: "Tuna", es: "Atún rojo", cat: "seafood", icon: "🍣", phon: "/ˈtʃuː.nə/", example: "Lightly seared bluefin tuna steak." },
+
+      // Meats & Charcuterie
+      { name: "Sobrassada", es: "Sobrasada de Mallorca", cat: "meat", icon: "🍖", phon: "/sɒb.rəˈsɑː.də/", example: "Spiced cured pork paste with paprika and honey." },
+      { name: "Suckling Pig", es: "Lechona / Cochinillo (Porcella)", cat: "meat", icon: "🐖", phon: "/ˈsʌk.lɪŋ pɪɡ/", example: "Crispy roasted Mallorcan suckling pig." },
+      { name: "Cured Ham (Jamón)", es: "Jamón curado / Ibérico", cat: "meat", icon: "🥓", phon: "/kjʊərd hæm/", example: "Thin slices of acorn-fed cured Iberian ham." },
+      { name: "Lamb Chops", es: "Chuletas de cordero", cat: "meat", icon: "🥩", phon: "/læm tʃɒps/", example: "Grilled lamb chops over charcoal embers." },
+      { name: "Ribeye Steak", es: "Chuletón / Entrecot", cat: "meat", icon: "🥩", phon: "/ˈrɪb.aɪ steɪk/", example: "Prime dry-aged ribeye cooked medium-rare." },
+      { name: "Pork Belly", es: "Panceta de cerdo", cat: "meat", icon: "🥓", phon: "/pɔːrk ˈbel.i/", example: "Slow-roasted pork belly with crispy crackling." },
+      { name: "Chicken Breast", es: "Pechuga de pollo", cat: "meat", icon: "🍗", phon: "/ˈtʃɪk.ɪn brest/", example: "Pan-seared tender chicken breast." },
+
+      // Oils, Vinegars, Seasonings
+      { name: "Extra Virgin Olive Oil", es: "Aceite de oliva virgen extra", cat: "oils", icon: "🫒", phon: "/ˈɒl.ɪv ɔɪl/", example: "Cold-pressed extra virgin olive oil." },
+      { name: "Sherry Vinegar", es: "Vinagre de Jerez", cat: "oils", icon: "🍾", phon: "/ˈʃer.i ˈvɪn.ɪ.ɡər/", example: "A splash of aged sherry vinegar to balance acidity." },
+      { name: "Sea Salt Flakes", es: "Escamas de sal marina (Flor de Sal)", cat: "oils", icon: "🧂", phon: "/siː sɒlt fleɪks/", example: "Flor de Sal d'Es Trenc sprinkled over grilled meats." },
+      { name: "Black Pepper", es: "Pimienta negra", cat: "oils", icon: "🧂", phon: "/blæk ˈpep.ər/", example: "Freshly cracked black peppercorns." },
+      { name: "Sweet Paprika", es: "Pimentón dulce (Pimentó bord tap de cortí)", cat: "oils", icon: "🌶️", phon: "/pæˈpriː.kə/", example: "Mallorcan Tap de Cortí sweet paprika powder." },
+      { name: "Honey", es: "Miel", cat: "oils", icon: "🍯", phon: "/ˈhʌn.i/", example: "Wildflower honey drizzled over sobrassada and cheese." },
+
+      // Dairy, Grains & Bakery
+      { name: "Heavy Cream", es: "Nata líquida para cocinar", cat: "dairy", icon: "🥛", phon: "/ˈhev.i kriːm/", example: "Rich heavy cream for sauces and desserts." },
+      { name: "Butter", es: "Mantequilla", cat: "dairy", icon: "🧈", phon: "/ˈbʌt.ər/", example: "Unsalted French butter for emulsifying." },
+      { name: "Eggs", es: "Huevos (yema y clara)", cat: "dairy", icon: "🥚", phon: "/eɡz/", example: "Free-range eggs (egg yolk, egg white)." },
+      { name: "Manchego / Mahón Cheese", es: "Queso curado / Mahón", cat: "dairy", icon: "🧀", phon: "/tʃiːz/", example: "Aged Balearic cow's milk cheese." },
+      { name: "Bomba Rice", es: "Arroz bomba (para paellas)", cat: "dairy", icon: "🍚", phon: "/raɪs/", example: "Short-grain Bomba rice that absorbs rich seafood stock." },
+      { name: "Rustic Bread", es: "Pan moreno / Pan payés", cat: "dairy", icon: "🥖", phon: "/bred/", example: "Crusty artisan rustic bread for pa amb oli." },
+      { name: "Almonds", es: "Almendras de Mallorca", cat: "dairy", icon: "🥜", phon: "/ˈɑː.məndz/", example: "Toasted Mallorcan almonds for traditional gató cake." },
+      { name: "Ensaïmada Dough", es: "Masa de ensaimada", cat: "dairy", icon: "🥐", phon: "/doʊ/", example: "Laminated sweet spiral pastry dough made with lard." }
+    ];
+
+    let currentCategory = 'all';
+    let searchQuery = '';
+
+    function renderIngredients() {
+      const grid = document.getElementById('ingredientGrid');
+      const filtered = ingredientsData.filter(item => {
+        const matchesCategory = currentCategory === 'all' || item.cat === currentCategory;
+        const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                              item.es.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                              item.example.toLowerCase().includes(searchQuery.toLowerCase());
+        return matchesCategory && matchesSearch;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full py-12 text-center text-slate-400">
+            <span class="text-3xl block mb-2">🔍</span>
+            <p class="font-medium text-slate-600">No ingredients match "${searchQuery}"</p>
+            <p class="text-xs text-slate-400 mt-1">Try searching for garlic, seafood, or oil.</p>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(item => `
+        <div class="bg-white rounded-2xl p-4 border border-slate-200 hover:border-amber-400 shadow-sm hover:shadow-md transition-all group flex flex-col justify-between">
+          <div>
+            <div class="flex items-start justify-between">
+              <span class="text-2xl">${item.icon}</span>
+              <button onclick="speakText('${item.name}. ${item.example.replace(/'/g, "\\'")}')" 
+                      class="p-1.5 rounded-lg bg-amber-50 hover:bg-amber-100 text-amber-700 border border-amber-200 transition-colors"
+                      title="Listen to pronunciation">
+                🔊
+              </button>
+            </div>
+            <div class="mt-2.5">
+              <h4 class="font-serif font-bold text-slate-900 text-lg leading-tight group-hover:text-amber-600 transition-colors">${item.name}</h4>
+              <p class="text-xs font-semibold text-amber-700 mt-0.5">${item.es}</p>
+              <p class="text-[11px] font-mono text-slate-400 mt-0.5">${item.phon}</p>
+            </div>
+          </div>
+          <div class="mt-3 pt-2.5 border-t border-slate-100">
+            <p class="text-xs text-slate-500 italic">"${item.example}"</p>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function setCategory(cat) {
+      currentCategory = cat;
+      document.querySelectorAll('.cat-btn').forEach(btn => {
+        if (btn.dataset.category === cat) {
+          btn.className = "cat-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-amber-500 text-white shadow-sm transition-all";
+        } else {
+          btn.className = "cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 transition-all";
+        }
+      });
+      renderIngredients();
+    }
+
+    function filterIngredients() {
+      searchQuery = document.getElementById('ingredientSearch').value;
+      renderIngredients();
+    }
+
+    // Quiz Questions Data
+    const quizQuestions = [
+      {
+        question: "Claudia needs to cook the pasta water until it has vigorous, energetic bubbles at 100°C. What verb is this?",
+        hint: "Español: ¿Cómo se dice hervir con fuerza en inglés?",
+        icon: "🍲",
+        options: ["To Simmer", "To Boil", "To Poach", "To Sauté"],
+        correct: 1,
+        explanation: "Correct! 'To Boil' means cooking at 100°C with rapid bubbles. 'To Simmer' is lower heat with gentle small bubbles."
+      },
+      {
+        question: "A line cook asks Claudia to quickly cook bite-sized mushrooms in a hot pan with a small amount of oil while tossing them. What technique is this?",
+        hint: "Español: Saltear en la sartén a fuego vivo",
+        icon: "🍳",
+        options: ["To Roast", "To Deep-fry", "To Sauté", "To Steam"],
+        correct: 2,
+        explanation: "Correct! 'To Sauté' comes from the French 'sauter' (to jump) and means cooking food quickly in a little fat over high heat."
+      },
+      {
+        question: "A waiter runs into the kitchen and says: 'Table 3 has a guest with a severe SHELLFISH allergy!' Which ingredient MUST Claudia avoid?",
+        hint: "Español: ¿Cuál es un marisco (shellfish)?",
+        icon: "🦐",
+        options: ["Red Prawns & Mussels", "Lamb Chops", "Tomatoes & Garlic", "Olive oil & Bread"],
+        correct: 0,
+        explanation: "Correct! 'Shellfish' refers to crustaceans (prawns, shrimp, lobster, crab) and molluscs (mussels, clams). Cross-contamination must be prevented!"
+      },
+      {
+        question: "When cooking a delicate fish sauce or rich stock on low heat so that tiny bubbles appear gently on the surface, what is this called?",
+        hint: "Español: Cocinar a fuego lento / Chup-chup",
+        icon: "🥘",
+        options: ["Simmering", "Boiling", "Broiling", "Gratinating"],
+        correct: 0,
+        explanation: "Correct! 'Simmering' occurs just below boiling (approx. 85°C–95°C) and develops deep flavor without breaking delicate foods."
+      },
+      {
+        question: "The maître d' shouts: 'We are 86 on the suckling pig!' What does '86' mean in professional restaurant English?",
+        hint: "Español: ¿Qué significa '86' en jerga de cocina?",
+        icon: "📋",
+        options: ["It needs to be cooked to 86 degrees", "We have sold out / It is no longer available", "It is for Table 86", "Cook 86 more portions right now"],
+        correct: 1,
+        explanation: "Spot on! '86' (eighty-six) is the world's most famous restaurant kitchen term for an item that is out of stock!"
+      }
+    ];
+
+    let currentQuestionIdx = 0;
+    let quizScore = 0;
+
+    function loadQuestion() {
+      const q = quizQuestions[currentQuestionIdx];
+      document.getElementById('quiz-progress').innerText = `Question ${currentQuestionIdx + 1} of ${quizQuestions.length}`;
+      document.getElementById('quiz-score').innerText = `Score: ${quizScore} / ${quizQuestions.length}`;
+      document.getElementById('quiz-question').innerText = q.question;
+      document.getElementById('quiz-hint').innerText = q.hint;
+      document.getElementById('quiz-icon').innerText = q.icon;
+      
+      const optionsContainer = document.getElementById('quiz-options');
+      optionsContainer.innerHTML = q.options.map((opt, i) => `
+        <button onclick="selectAnswer(${i})" class="quiz-opt-btn text-left p-4 rounded-xl border border-slate-200 hover:border-amber-400 bg-slate-50 hover:bg-amber-50/50 font-medium text-sm text-slate-800 transition-all flex items-center justify-between">
+          <span>${opt}</span>
+          <span class="w-6 h-6 rounded-full border border-slate-300 flex items-center justify-center text-xs text-slate-400">#${i+1}</span>
+        </button>
+      `).join('');
+
+      const feedback = document.getElementById('quiz-feedback');
+      feedback.className = "hidden";
+      feedback.innerText = "";
+      document.getElementById('quiz-next-btn').classList.add('hidden');
+    }
+
+    function selectAnswer(chosenIdx) {
+      const q = quizQuestions[currentQuestionIdx];
+      const buttons = document.querySelectorAll('.quiz-opt-btn');
+      
+      // Disable buttons
+      buttons.forEach(b => b.disabled = true);
+
+      const feedback = document.getElementById('quiz-feedback');
+      feedback.classList.remove('hidden');
+
+      if (chosenIdx === q.correct) {
+        quizScore++;
+        document.getElementById('quiz-score').innerText = `Score: ${quizScore} / ${quizQuestions.length}`;
+        buttons[chosenIdx].classList.remove('bg-slate-50', 'border-slate-200');
+        buttons[chosenIdx].classList.add('bg-emerald-100', 'border-emerald-500', 'text-emerald-900', 'font-bold');
+        feedback.className = "p-4 rounded-xl text-sm font-semibold mb-6 bg-emerald-50 border border-emerald-200 text-emerald-800";
+        feedback.innerHTML = `🎉 <strong>Excellent, Chef Claudia!</strong> ${q.explanation}`;
+        speakText("Correct! Well done!");
+      } else {
+        buttons[chosenIdx].classList.remove('bg-slate-50', 'border-slate-200');
+        buttons[chosenIdx].classList.add('bg-red-100', 'border-red-400', 'text-red-900');
+        buttons[q.correct].classList.add('bg-emerald-100', 'border-emerald-500', 'text-emerald-900', 'font-bold');
+        feedback.className = "p-4 rounded-xl text-sm font-semibold mb-6 bg-amber-50 border border-amber-200 text-amber-900";
+        feedback.innerHTML = `💡 <strong>Good try!</strong> The right answer is <em>"${q.options[q.correct]}"</em>. ${q.explanation}`;
+        speakText("Good try! The correct answer is " + q.options[q.correct]);
+      }
+
+      const nextBtn = document.getElementById('quiz-next-btn');
+      nextBtn.classList.remove('hidden');
+      if (currentQuestionIdx === quizQuestions.length - 1) {
+        nextBtn.innerText = "Finish Quiz 🏆";
+      }
+    }
+
+    function nextQuestion() {
+      if (currentQuestionIdx < quizQuestions.length - 1) {
+        currentQuestionIdx++;
+        loadQuestion();
+      } else {
+        // Quiz completed
+        const quizBox = document.getElementById('quiz-box');
+        quizBox.innerHTML = `
+          <div class="text-center py-8">
+            <span class="text-6xl block mb-3">🌟</span>
+            <h3 class="text-3xl font-serif font-bold text-slate-900">Quiz Completed!</h3>
+            <p class="text-lg text-amber-700 font-semibold mt-2">You scored ${quizScore} out of ${quizQuestions.length}!</p>
+            <p class="text-slate-600 text-sm max-w-md mx-auto mt-2">
+              ${quizScore >= 4 
+                ? "¡Impresionante, Claudia! You're ready to command any international kitchen in Mallorca and beyond." 
+                : "Great practice, Chef Claudia! Review the cards above and try again anytime."}
+            </p>
+            <div class="mt-6 flex justify-center gap-3">
+              <button onclick="restartQuiz()" class="px-6 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-semibold text-sm shadow-md transition-all">
+                🔄 Retake Quiz
+              </button>
+              <a href="#welcome" class="px-6 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-sm transition-all">
+                Back to Top ⬆️
+              </a>
+            </div>
+          </div>
+        `;
+        speakText(`Congratulations Claudia! You completed the quiz with a score of ${quizScore} out of 5!`);
+      }
+    }
+
+    function restartQuiz() {
+      currentQuestionIdx = 0;
+      quizScore = 0;
+      location.reload();
+    }
+
+    // Initialize on load
+    window.addEventListener('DOMContentLoaded', () => {
+      renderIngredients();
+      loadQuestion();
+    });
+  </script>
+</body>
+</html>
